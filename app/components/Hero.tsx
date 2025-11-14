@@ -26,6 +26,7 @@ export function Hero() {
 
   return (
     <section 
+      aria-label="Hero section"
       className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-16 md:pb-24 overflow-hidden"
       style={{
         backgroundColor: '#0C192D',
@@ -56,7 +57,14 @@ export function Hero() {
           )}
           asChild
         >
-          <a ref={buttonRef} href="#contact" className="opacity-0">Get Started</a>
+          <a 
+            ref={buttonRef} 
+            href="#contact" 
+            className="opacity-0"
+            aria-label="Get started - navigate to contact section"
+          >
+            Get Started
+          </a>
         </Button>
       </div>
     </section>

@@ -72,6 +72,7 @@ export function CTA() {
           <a
             href="mailto:melius.ajnahal@gmail.com"
             className="text-[var(--brand-gold)] hover:underline transition-colors duration-300"
+            aria-label="Send email to melius.ajnahal@gmail.com"
           >
             melius.ajnahal@gmail.com
           </a>

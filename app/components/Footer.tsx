@@ -16,6 +16,7 @@ export function Footer() {
   return (
     <footer 
       ref={footerRef}
+      aria-label="Site footer"
       className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 border-t border-border opacity-0"
     >
       <div className="container mx-auto text-center">

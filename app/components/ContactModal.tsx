@@ -233,10 +233,18 @@ export function ContactModal({
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 className="text-white placeholder:text-white/50"
+                aria-invalid={touched.name && errors.name ? "true" : "false"}
+                aria-describedby={touched.name && errors.name ? "name-error" : undefined}
               />
             </InputGroup>
             {touched.name && errors.name && (
-              <Alert variant="destructive" className="py-2">
+              <Alert 
+                id="name-error"
+                variant="destructive" 
+                className="py-2"
+                role="alert"
+                aria-live="polite"
+              >
                 <AlertDescription className="text-sm">
                   {errors.name}
                 </AlertDescription>
@@ -265,10 +273,18 @@ export function ContactModal({
                 onChange={handleInputChange}
                 onBlur={handleBlur}
                 className="text-white placeholder:text-white/50"
+                aria-invalid={touched.email && errors.email ? "true" : "false"}
+                aria-describedby={touched.email && errors.email ? "email-error" : undefined}
               />
             </InputGroup>
             {touched.email && errors.email && (
-              <Alert variant="destructive" className="py-2">
+              <Alert 
+                id="email-error"
+                variant="destructive" 
+                className="py-2"
+                role="alert"
+                aria-live="polite"
+              >
                 <AlertDescription className="text-sm">
                   {errors.email}
                 </AlertDescription>
@@ -297,10 +313,18 @@ export function ContactModal({
                 onBlur={handleBlur}
                 rows={5}
                 className="text-white placeholder:text-white/50"
+                aria-invalid={touched.message && errors.message ? "true" : "false"}
+                aria-describedby={touched.message && errors.message ? "message-error" : undefined}
               />
             </InputGroup>
             {touched.message && errors.message && (
-              <Alert variant="destructive" className="py-2">
+              <Alert 
+                id="message-error"
+                variant="destructive" 
+                className="py-2"
+                role="alert"
+                aria-live="polite"
+              >
                 <AlertDescription className="text-sm">
                   {errors.message}
                 </AlertDescription>
@@ -319,6 +343,7 @@ export function ContactModal({
             <Button
               type="submit"
               disabled={isSubmitting}
+              aria-busy={isSubmitting}
               className={cn(
                 "bg-brand-gold text-black hover:bg-(--brand-gold)/90",
                 "disabled:opacity-50 disabled:cursor-not-allowed"

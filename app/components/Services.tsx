@@ -113,7 +113,10 @@ export function Services() {
               >
                 <CardHeader>
                   <div className="mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="size-12 text-brand-gold transition-transform duration-300" />
+                    <Icon 
+                      className="size-12 text-brand-gold transition-transform duration-300" 
+                      aria-hidden="true"
+                    />
                   </div>
                   <CardTitle className="font-serif text-xl md:text-2xl lg:text-3xl text-brand-gold">
                     {service.title}
