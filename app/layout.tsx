@@ -78,6 +78,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: ["/og-image.png"],
     creator: "@melius",
+    site: "@melius",
   },
   robots: {
     index: true,
