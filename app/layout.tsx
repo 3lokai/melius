@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: `${siteUrl}/og-image.png`,
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: `${siteName} Logo`,
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteName} - Strategic Excellence in Business Advisory`,
     description: siteDescription,
-    images: [`${siteUrl}/og-image.png`],
+    images: ["/og-image.png"],
     creator: "@melius",
   },
   robots: {
