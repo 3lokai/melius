@@ -1,0 +1,14 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Clean URL parameters for search pages
+Clean-param: q /search
+
+# Sitemap
+Sitemap: https://melius-ajnahal.com/sitemap.xml
+
+# Disallow admin or private areas if any
+# Disallow: /admin/
+# Disallow: /api/
+

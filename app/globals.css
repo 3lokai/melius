@@ -1,26 +1,152 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-cormorant-garamond);
   --font-mono: var(--font-geist-mono);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-dark-blue: var(--brand-dark-blue);
+  --color-brand-light-blue: var(--brand-light-blue);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================
+   LIGHT MODE — AjnaHal
+============================ */
+
+:root {
+  --radius: 0.625rem;
+
+  /* Main brand tones */
+  --background: oklch(0.25 0.04 260); /* #0F1F3B */
+  --foreground: oklch(0.97 0.01 95); /* Ivory */
+
+  --card: oklch(0.30 0.04 260); /* #1A2F4A */
+  --card-foreground: oklch(0.97 0.01 95);
+
+  --popover: oklch(0.30 0.04 260);
+  --popover-foreground: oklch(0.97 0.01 95);
+
+  /* Gold accents */
+  --primary: oklch(0.82 0.08 85); /* #C9AA61 */
+  --primary-foreground: oklch(0.15 0.01 95);
+
+  /* Subtle navy-blue for secondary UI */
+  --secondary: oklch(0.33 0.03 260);
+  --secondary-foreground: oklch(0.97 0.01 95);
+
+  /* Muted / dim Navy */
+  --muted: oklch(0.28 0.02 260);
+  --muted-foreground: oklch(0.75 0.01 95);
+
+  --accent: oklch(0.82 0.08 85);
+  --accent-foreground: oklch(0.15 0.01 95);
+
+  --destructive: oklch(0.60 0.20 30);
+
+  --border: oklch(0.32 0.02 260);
+  --input: oklch(0.32 0.02 260);
+  --ring: oklch(0.82 0.08 85);
+
+  /* Quick aliases */
+  --brand-gold: oklch(0.82 0.08 85);
+  --brand-dark-blue: oklch(0.25 0.04 260);
+  --brand-light-blue: oklch(0.40 0.04 260);
+}
+
+/* ============================
+   DARK MODE — deeper navy
+============================ */
+
+.dark {
+  --background: oklch(0.18 0.03 260);
+  --foreground: oklch(0.97 0.01 95);
+
+  --card: oklch(0.22 0.03 260);
+  --card-foreground: oklch(0.97 0.01 95);
+
+  --popover: oklch(0.22 0.03 260);
+  --popover-foreground: oklch(0.97 0.01 95);
+
+  --primary: oklch(0.82 0.08 85);
+  --primary-foreground: oklch(0.15 0.01 95);
+
+  --secondary: oklch(0.20 0.02 260);
+  --secondary-foreground: oklch(0.97 0.01 95);
+
+  --muted: oklch(0.20 0.02 260);
+  --muted-foreground: oklch(0.70 0.01 95);
+
+  --accent: oklch(0.82 0.08 85);
+  --accent-foreground: oklch(0.15 0.01 95);
+
+  --destructive: oklch(0.55 0.18 30);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.82 0.08 85);
+}
+
+/* ============================
+   BASE
+============================ */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
